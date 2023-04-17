@@ -8,4 +8,4 @@ systemctl enable nginx
 systemctl start nginx
 cp roboshop.conf /etc/nginx/default.d/roboshop.conf
 systemctl restart nginx
-systemctl enable nginx
+
