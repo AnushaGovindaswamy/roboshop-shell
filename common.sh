@@ -117,7 +117,7 @@ func_java() {
 
 
 func_python() {
-  func_print_head "Install Python"
+  func_print_head "Install Python for payment"
   yum install python36 gcc python3-devel -y &>>$log_file
   func_stat_check $?
 
