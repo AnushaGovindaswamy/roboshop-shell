@@ -1,16 +1,7 @@
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-yum install nodejs -y
-useradd roboshop
-mkdir /app
-curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user.zip
-cd /app
-unzip /tmp/user.zip
-npm install
-cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service
-systemctl daemon-reload
-systemctl enable user
-systemctl start user
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
-yum install mongodb-org-shell -y
-mongo --h <ipadress> </app/schema/catalogue.js
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
 
+component=user
+schema_setup=mongo
+func_nodejs
